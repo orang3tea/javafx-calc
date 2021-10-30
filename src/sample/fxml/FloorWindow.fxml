@@ -85,27 +85,9 @@
         </AnchorPane>
         <AnchorPane prefHeight="431.0" prefWidth="1024.0">
             <children>
-                <ButtonBar layoutX="-5.0" layoutY="31.0" prefHeight="564.0" prefWidth="1015.0">
+                <ButtonBar layoutX="89.0" layoutY="34.0" prefHeight="564.0" prefWidth="803.0">
                     <buttons>
-                        <Button fx:id="floorButton" alignment="TOP_CENTER" contentDisplay="TOP" minWidth="0.0" mnemonicParsing="false" prefHeight="451.0" prefWidth="345.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет обоев" textFill="WHITE">
-                            <font>
-                                <Font name="Gabriola" size="40.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                            <padding>
-                                <Insets top="150.0" />
-                            </padding>
-                            <graphic>
-                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../assets/wallpaper.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                        <Button alignment="TOP_CENTER" cache="true" contentDisplay="TOP" mnemonicParsing="false" prefHeight="449.0" prefWidth="383.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет штукатурки" textAlignment="CENTER" textFill="WHITE">
+                        <Button alignment="TOP_CENTER" cache="true" contentDisplay="TOP" mnemonicParsing="false" prefHeight="449.0" prefWidth="383.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет стяжки" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>
@@ -121,12 +103,12 @@
                             <graphic>
                                 <ImageView fitHeight="173.0" fitWidth="229.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../assets/wall.png" />
+                                        <Image url="@../assets/concrete_floor_cap.jpg" />
                                     </image>
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button id="aboutProgrammButton" alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="450.0" prefWidth="0.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-border-radius: 10; -fx-background-radius: 10;" text="расчет шпатлевки" textFill="WHITE">
+                        <Button fx:id="floorButton" alignment="TOP_CENTER" contentDisplay="TOP" minWidth="0.0" mnemonicParsing="false" prefHeight="449.0" prefWidth="345.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет ламината" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>
@@ -137,20 +119,20 @@
                                 <Insets top="125.0" />
                             </padding>
                             <graphic>
-                                <ImageView fitHeight="172.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="169.0" fitWidth="232.0" pickOnBounds="true">
                                     <image>
-                                        <Image url="@../assets/shpatlevka.png" />
+                                        <Image url="@../assets/laminat.jpg" />
                                     </image>
                                 </ImageView>
                             </graphic>
                         </Button>
                     </buttons>
                 </ButtonBar>
-            <ImageView fx:id="goBack" accessibleRole="BUTTON" fitHeight="115.0" fitWidth="119.0" layoutY="-24.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/pngwing.com.png" />
-               </image>
-            </ImageView>
+                <ImageView fx:id="goBack" accessibleRole="BUTTON" fitHeight="115.0" fitWidth="119.0" layoutY="-24.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/pngwing.com.png" />
+                    </image>
+                </ImageView>
             </children>
         </AnchorPane>
     </children>

@@ -47,7 +47,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="675.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.WallController">
+<VBox prefHeight="675.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.forscene.WallController">
     <children>
         <MenuBar prefHeight="47.0" prefWidth="1024.0" style="-fx-background-color: #2E8B57;" VBox.vgrow="NEVER">
             <menus>

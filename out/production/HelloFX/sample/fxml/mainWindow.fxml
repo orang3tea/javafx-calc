@@ -47,7 +47,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="721.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainWindowController">
+<VBox prefHeight="721.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.forscene.MainWindowController">
     <children>
         <MenuBar prefHeight="47.0" prefWidth="1024.0" style="-fx-background-color: #2E8B57;" VBox.vgrow="NEVER">
             <menus>
@@ -87,7 +87,7 @@
             <children>
                 <ButtonBar layoutX="-5.0" layoutY="31.0" prefHeight="564.0" prefWidth="1015.0">
                     <buttons>
-                        <Button fx:id="floorButton" alignment="TOP_CENTER" contentDisplay="TOP" minWidth="0.0" mnemonicParsing="false" prefHeight="451.0" prefWidth="345.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет полов" textFill="WHITE">
+                        <Button fx:id="floorButton" alignment="TOP_CENTER" contentDisplay="TOP" minWidth="0.0" mnemonicParsing="false" onAction="#toSceneFloor" prefHeight="451.0" prefWidth="345.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет полов" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>

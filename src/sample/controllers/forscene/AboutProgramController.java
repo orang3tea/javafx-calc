@@ -1,4 +1,4 @@
-package sample.controllers;
+package sample.controllers.forscene;
 
 public class AboutProgramController {
 }

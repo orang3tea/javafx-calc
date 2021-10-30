@@ -1,17 +1,15 @@
-package sample.controllers;
+package sample.controllers.forscene;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
+import sample.controllers.ControllerAction;
+import sample.controllers.Paths;
 
-public class WallController {
+public class WallController extends ControllerAction {
 
     @FXML
     private ResourceBundle resources;
@@ -27,9 +25,7 @@ public class WallController {
 
     @FXML
     void goBack(MouseEvent event)throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/fxml/mainWindow.fxml"));
-        Stage window =(Stage) goBack.getScene().getWindow();
-        window.setScene(new Scene(root, 1024, 707));
+        setNewScene(floorButton, Paths.TO_MAIN_WINDOW);
 
     }
 
