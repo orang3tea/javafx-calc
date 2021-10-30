@@ -27,7 +27,7 @@ public class MainWindowController {
     @FXML
     private Button wallButton;
 
-
+    //dummmyyy
     public void toSceneWall() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/sample/fxml/WallWindow.fxml"));
         Stage window =(Stage) wallButton.getScene().getWindow();
