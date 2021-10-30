@@ -26,6 +26,7 @@ public class MainWindowController {
 
     @FXML
     private Button wallButton;
+    //jjholjn
     //dummy
     //dummmyyy
     public void toSceneWall() throws Exception {
