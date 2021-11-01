@@ -2,6 +2,7 @@ package sample.controllers.forscene;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import sample.controllers.ControllerAction;
@@ -25,7 +26,7 @@ public class MainWindowController extends ControllerAction {
     private Button wallButton;
 
     public void toSceneWall() {
-            setNewScene(wallButton, Paths.TO_WALL_WINDOW);
+        setNewScene(wallButton, Paths.TO_WALL_WINDOW);
     }
 
     public void aboutProgram() {
