@@ -87,7 +87,7 @@
             <children>
                 <ButtonBar layoutX="89.0" layoutY="34.0" prefHeight="564.0" prefWidth="803.0">
                     <buttons>
-                        <Button alignment="TOP_CENTER" cache="true" contentDisplay="TOP" mnemonicParsing="false" prefHeight="449.0" prefWidth="383.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет стяжки" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="concreteCap" alignment="TOP_CENTER" cache="true" contentDisplay="TOP" mnemonicParsing="false" onAction="#toCapCalculator" prefHeight="449.0" prefWidth="383.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет стяжки" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>

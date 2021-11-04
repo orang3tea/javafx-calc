@@ -2,6 +2,7 @@ package sample.controllers.forscene;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -18,15 +19,36 @@ public class WallController extends ControllerAction {
     private URL location;
 
     @FXML
-    private Button floorButton;
-
-    @FXML
     private ImageView goBack;
 
     @FXML
-    void goBack(MouseEvent event)throws Exception{
-        setNewScene(floorButton, Paths.TO_MAIN_WINDOW);
+    private Button plasterButton;
 
+    @FXML
+    private Button puttyButton;
+
+    @FXML
+    private Button wallpaperButton;
+
+    @FXML
+    void goBack(MouseEvent event)throws Exception{
+        setNewScene(plasterButton, Paths.TO_MAIN_WINDOW);
+
+    }
+
+
+     public void toScenePlaster() {
+
+    }
+
+
+    public void toScenePutty() {
+
+    }
+
+
+    public void toSceneWallpaper() {
+    setNewScene(wallpaperButton, Paths.TO_WALLPAPER);
     }
 
 

@@ -1,16 +1,25 @@
 package sample.controllers.forscene.calculator;
 
+import javafx.scene.control.TextField;
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import sample.controllers.ControllerAction;
 import sample.controllers.Paths;
 
 public class Laminate extends ControllerAction {
+    @FXML
+    private TextField areaPack;
+
+    @FXML
+    private Label label;
+
 
     @FXML
     private static final String[] variantsFofChoiceBox = {"кв. метрах", "упаковках"};
@@ -39,7 +48,25 @@ public class Laminate extends ControllerAction {
     void initialize() {
         resultOutBox.getItems().addAll(variantsFofChoiceBox);
         resultOutBox.setValue(variantsFofChoiceBox[0]);
+        resultOutBox.setOnAction(this:: changeBox );
 
     }
+
+    private void changeBox(javafx.event.ActionEvent actionEvent) {
+                getChoice(resultOutBox);
+    }
+    private void getChoice(ChoiceBox<String> choiceBox) {
+        String choice = resultOutBox.getValue();
+        if(choice.equals("упаковках")){
+            label.setDisable(false);
+            areaPack.setDisable(false);
+            areaPack.setEditable(true);
+        }
+        else{
+            label.setDisable(true);
+            areaPack.setDisable(true);
+            areaPack.setEditable(false);}
+    }
+
 
 }

@@ -87,7 +87,7 @@
             <children>
                 <ButtonBar layoutX="-5.0" layoutY="31.0" prefHeight="564.0" prefWidth="1015.0">
                     <buttons>
-                        <Button fx:id="floorButton" alignment="TOP_CENTER" contentDisplay="TOP" minWidth="0.0" mnemonicParsing="false" prefHeight="451.0" prefWidth="345.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет обоев" textFill="WHITE">
+                        <Button fx:id="wallpaperButton" alignment="TOP_CENTER" contentDisplay="TOP" minWidth="0.0" mnemonicParsing="false" onAction="#toSceneWallpaper" prefHeight="451.0" prefWidth="345.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет обоев" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>
@@ -105,7 +105,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button alignment="TOP_CENTER" cache="true" contentDisplay="TOP" mnemonicParsing="false" prefHeight="449.0" prefWidth="383.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет штукатурки" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="plasterButton" alignment="TOP_CENTER" cache="true" contentDisplay="TOP" mnemonicParsing="false" onAction="#toScenePlaster" prefHeight="449.0" prefWidth="383.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-background-radius: 10; -fx-border-radius: 10;" text="расчет штукатурки" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>
@@ -126,7 +126,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button id="aboutProgrammButton" alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="450.0" prefWidth="0.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-border-radius: 10; -fx-background-radius: 10;" text="расчет шпатлевки" textFill="WHITE">
+                        <Button id="aboutProgrammButton" fx:id="puttyButton" alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#toScenePutty" prefHeight="450.0" prefWidth="0.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-border-radius: 10; -fx-background-radius: 10;" text="расчет шпатлевки" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>

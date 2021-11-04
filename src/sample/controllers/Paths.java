@@ -6,4 +6,6 @@ public class Paths {
     public final static String TO_MAIN_WINDOW = "/sample/fxml/mainWindow.fxml";
     public final static String TO_FLOOR_WINDOW = "/sample/fxml/FloorWindow.fxml";
     public final static String TO_LAMINATE_CALC = "/sample/fxml/forcalculator/laminate.fxml";
+    public final static String TO_CONCRETE_FLOOR_CAP = "/sample/fxml/forcalculator/concreteFloorCap.fxml";
+    public final static String TO_WALLPAPER = "/sample/fxml/forcalculator/wallpaper.fxml";
 }
