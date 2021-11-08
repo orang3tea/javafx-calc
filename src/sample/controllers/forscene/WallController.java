@@ -38,11 +38,12 @@ public class WallController extends ControllerAction {
 
 
      public void toScenePlaster() {
-
+        setNewScene(plasterButton, Paths.TO_PLASTER);
     }
 
 
     public void toScenePutty() {
+        setNewScene(puttyButton, Paths.TO_PUTTY);
 
     }
 
