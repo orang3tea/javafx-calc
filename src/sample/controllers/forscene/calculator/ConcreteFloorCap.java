@@ -4,12 +4,27 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import sample.controllers.ControllerAction;
 import sample.controllers.Paths;
 
 public class ConcreteFloorCap extends ControllerAction {
+    @FXML
+    private TextField lengthCentimeters;
+
+    @FXML
+    private TextField lengthMeters;
+
+    @FXML
+    private TextField thickness;
+
+    @FXML
+    private TextField widthCentimeters;
+
+    @FXML
+    private TextField widthMeters;
 
     @FXML
     private ResourceBundle resources;
@@ -32,6 +47,12 @@ public class ConcreteFloorCap extends ControllerAction {
     void initialize() {
         assert ResultButton != null : "fx:id=\"ResultButton\" was not injected: check your FXML file 'concreteFloorCap.fxml'.";
         assert goBack != null : "fx:id=\"goBack\" was not injected: check your FXML file 'concreteFloorCap.fxml'.";
+
+        typeCheck(lengthCentimeters);
+        typeCheck(lengthMeters);
+        typeCheck(widthCentimeters);
+        typeCheck(widthMeters);
+
 
     }
 }
