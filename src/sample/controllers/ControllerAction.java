@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ControllerAction {
@@ -54,6 +55,23 @@ public class ControllerAction {
         stage.setScene(new Scene(root, width, height));
         stage.setResizable(resizable);
         stage.showAndWait();
+    }
+
+     protected static void typeCheck(TextField textField) {
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*" ))  {
+
+                textField.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+            else {
+                if(newValue.matches("\\d*" ) && !newValue.isEmpty()) {
+                    if(Integer.parseInt(newValue) > 99)
+                        textField.setText(oldValue);
+                }
+            }
+
+        });
+
     }
 
 }

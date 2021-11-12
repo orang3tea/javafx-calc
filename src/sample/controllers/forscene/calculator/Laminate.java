@@ -1,7 +1,6 @@
 package sample.controllers.forscene.calculator;
 
 import javafx.scene.control.TextField;
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -9,11 +8,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import sample.controllers.ControllerAction;
 import sample.controllers.Paths;
+import javafx.scene.input.KeyEvent;
 
 public class Laminate extends ControllerAction {
+
+    @FXML
+    private TextField LengthMeters;
     @FXML
     private TextField areaPack;
 
@@ -39,6 +43,7 @@ public class Laminate extends ControllerAction {
     @FXML
     private ChoiceBox<String> resultOutBox;
 
+
     @FXML
     void goBack(MouseEvent event) {
         setNewScene(ResultButton, Paths.TO_FLOOR_WINDOW);
@@ -49,12 +54,15 @@ public class Laminate extends ControllerAction {
         resultOutBox.getItems().addAll(variantsFofChoiceBox);
         resultOutBox.setValue(variantsFofChoiceBox[0]);
         resultOutBox.setOnAction(this:: changeBox );
+        typeCheck(LengthMeters);
+
 
     }
 
     private void changeBox(javafx.event.ActionEvent actionEvent) {
                 getChoice(resultOutBox);
     }
+
     private void getChoice(ChoiceBox<String> choiceBox) {
         String choice = resultOutBox.getValue();
         if(choice.equals("упаковках")){
@@ -67,6 +75,7 @@ public class Laminate extends ControllerAction {
             areaPack.setDisable(true);
             areaPack.setEditable(false);}
     }
+
 
 
 }
