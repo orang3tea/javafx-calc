@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ControllerAction {
+
     public static final int NORMAL_WIDTH = 1024;
     public static final int NORMAL_HEIGHT = 707;
     public static final int SMALL_WIDTH = 600;
@@ -56,8 +57,8 @@ public class ControllerAction {
 
     protected static void typeCheck(TextField textField) {
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
 
+            if(!newValue.matches("\\d*")) {
                 textField.setText(newValue.replaceAll("[^\\d]", ""));
             } else {
                 if (newValue.matches("\\d*") && !newValue.isEmpty()) {
@@ -68,6 +69,19 @@ public class ControllerAction {
 
         });
 
+    }
+
+    protected static boolean checkFields(TextField[] fields) {
+        for(TextField field : fields) {
+            if(field.getText().isEmpty())
+                return false;
+        }
+        return true;
+    }
+
+    public static int asOneNumber(String meters, String centimeters) {
+
+        return Integer.parseInt(meters) * 100 + Integer.parseInt(centimeters);
     }
 
 }
