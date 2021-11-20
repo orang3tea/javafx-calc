@@ -49,39 +49,48 @@ public class ControllerAction {
             e.printStackTrace();
         }
         Parent root = loader.getRoot();
+
         Stage stage = new Stage();
         stage.setScene(new Scene(root, width, height));
         stage.setResizable(resizable);
         stage.showAndWait();
     }
 
-    protected static void typeCheck(TextField textField) {
+    protected static void typeCheck(TextField[] textFields) {
+        for (TextField textField : textFields) {
+
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
 
             if(!newValue.matches("\\d*")) {
                 textField.setText(newValue.replaceAll("[^\\d]", ""));
+
             } else {
+
                 if (newValue.matches("\\d*") && !newValue.isEmpty()) {
+
                     if (Integer.parseInt(newValue) > 99)
                         textField.setText(oldValue);
                 }
             }
 
         });
+        }
 
     }
 
     protected static boolean checkFields(TextField[] fields) {
+
         for(TextField field : fields) {
             if(field.getText().isEmpty())
                 return false;
         }
+
         return true;
     }
 
-    public static int asOneNumber(String meters, String centimeters) {
+    public static int asOneNumber(TextField meters, TextField centimeters) {
 
-        return Integer.parseInt(meters) * 100 + Integer.parseInt(centimeters);
+        return Integer.parseInt(meters.getText()) * 100 + Integer.parseInt(centimeters.getText());
     }
 
 }

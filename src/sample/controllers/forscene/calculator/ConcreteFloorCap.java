@@ -11,6 +11,7 @@ import sample.controllers.ControllerAction;
 import sample.controllers.Paths;
 
 public class ConcreteFloorCap extends ControllerAction {
+    static private TextField[] fieldsForTypeCheck;
     @FXML
     private TextField lengthCentimeters;
 
@@ -45,13 +46,12 @@ public class ConcreteFloorCap extends ControllerAction {
 
     @FXML
     void initialize() {
+        fieldsForTypeCheck = new TextField[] {lengthCentimeters, lengthMeters, widthCentimeters, widthMeters};
         assert ResultButton != null : "fx:id=\"ResultButton\" was not injected: check your FXML file 'concreteFloorCap.fxml'.";
         assert goBack != null : "fx:id=\"goBack\" was not injected: check your FXML file 'concreteFloorCap.fxml'.";
 
-        typeCheck(lengthCentimeters);
-        typeCheck(lengthMeters);
-        typeCheck(widthCentimeters);
-        typeCheck(widthMeters);
+        typeCheck(fieldsForTypeCheck);
+
 
 
     }

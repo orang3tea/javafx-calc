@@ -16,6 +16,7 @@ import sample.controllers.Paths;
 public class Laminate extends Calculations {
     static private TextField[] laminateFieldsInMeters;
     static private TextField[] laminateFieldsInBoxes;
+    static private TextField[] fieldsForTypeCheck;
 
     @FXML
     private TextField areaPackCentimeters;
@@ -75,18 +76,17 @@ public class Laminate extends Calculations {
     @FXML
     void initialize() {
         laminateFieldsInMeters = new TextField[]{widthMeters, widthCentimeters, lengthMeters, lengthCentimeters};
-        laminateFieldsInBoxes = new TextField[]{widthMeters, widthCentimeters, lengthMeters, lengthCentimeters};
+        laminateFieldsInBoxes = new TextField[]{widthMeters, widthCentimeters, lengthMeters, lengthCentimeters,
+                                                areaPackMeters, areaPackCentimeters};
+       fieldsForTypeCheck = new TextField[]{lengthMeters, lengthCentimeters, widthCentimeters, widthMeters,
+                areaPackMeters, areaPackCentimeters};
 
         resultOutBox.getItems().addAll(variantsFofChoiceBox);
         resultOutBox.setValue(variantsFofChoiceBox[0]);
         resultOutBox.setOnAction(this::changeBox);
 
-        typeCheck(lengthMeters);
-        typeCheck(lengthCentimeters);
-        typeCheck(widthCentimeters);
-        typeCheck(widthMeters);
-        typeCheck(areaPackMeters);
-        typeCheck(areaPackCentimeters);
+        typeCheck(fieldsForTypeCheck);
+
 
 
     }
@@ -97,6 +97,7 @@ public class Laminate extends Calculations {
 
     private void getChoice(ChoiceBox<String> choiceBox) {
         String choice = resultOutBox.getValue();
+
         if (choice.equals("упаковках")) {
             label.setDisable(false);
             areaPackMeters.setDisable(false);
@@ -123,8 +124,8 @@ public class Laminate extends Calculations {
 
         if(resultOutBox.getValue().equals("кв. метрах")) {
             if(checkFields(laminateFieldsInMeters)){
-                length = asOneNumber(lengthMeters.getText(), lengthCentimeters.getText());
-                width = asOneNumber(widthMeters.getText(), widthCentimeters.getText());
+                length = asOneNumber(lengthMeters, lengthCentimeters);
+                width = asOneNumber(widthMeters, widthCentimeters);
                 resultMessage.setText(countLaminateInMeters(length,width));
             }
             else
@@ -133,9 +134,9 @@ public class Laminate extends Calculations {
         else
         {
             if(checkFields(laminateFieldsInBoxes)) {
-                length = asOneNumber(lengthMeters.getText(), lengthCentimeters.getText());
-                width = asOneNumber(widthMeters.getText(), widthCentimeters.getText());
-                boxArea = asOneNumber(areaPackMeters.getText(), areaPackCentimeters.getText());
+                length = asOneNumber(lengthMeters, lengthCentimeters);
+                width = asOneNumber(widthMeters, widthCentimeters);
+                boxArea = asOneNumber(areaPackMeters, areaPackCentimeters);
                 resultMessage.setText(countLaminateInBoxes(length,width, boxArea));
             }
             else
