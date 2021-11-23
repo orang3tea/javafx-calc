@@ -137,7 +137,7 @@
                                         <Insets left="20.0" />
                                     </GridPane.margin>
                                 </Label>
-                                <Label prefHeight="63.0" prefWidth="191.0" text="рассчитать в " GridPane.rowIndex="6">
+                                <Label fx:id="choiceBoxLabel" prefHeight="63.0" prefWidth="191.0" text="рассчитать в " GridPane.rowIndex="6">
                                     <font>
                                         <Font name="Gabriola" size="35.0" />
                                     </font>
@@ -145,32 +145,32 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <TextField prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <TextField fx:id="lengthMeters" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                     <GridPane.margin>
                                         <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
                                     </GridPane.margin>
                                 </TextField>
-                                <TextField layoutX="211.0" layoutY="140.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                <TextField fx:id="lengthCentimeters" layoutX="211.0" layoutY="140.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                     <GridPane.margin>
                                         <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
                                     </GridPane.margin>
                                 </TextField>
-                                <TextField layoutX="211.0" layoutY="140.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                <TextField fx:id="widthMeters" layoutX="211.0" layoutY="140.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <GridPane.margin>
                                         <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
                                     </GridPane.margin>
                                 </TextField>
-                                <TextField layoutX="201.0" layoutY="190.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                <TextField fx:id="widthCentimeters" layoutX="201.0" layoutY="190.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                     <GridPane.margin>
                                         <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
                                     </GridPane.margin>
                                 </TextField>
-                                <ChoiceBox fx:id="resultOutBox" prefHeight="25.0" prefWidth="171.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                <ChoiceBox fx:id="choiceBox" prefHeight="25.0" prefWidth="171.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
                                     <GridPane.margin>
                                         <Insets left="10.0" right="40.0" />
                                     </GridPane.margin>
                                 </ChoiceBox>
-                                <Button fx:id="ResultButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="242.0" style="-fx-background-color: #2E8B57;" text="рассчет" textFill="WHITE" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                <Button fx:id="ResultButton" mnemonicParsing="false" onAction="#calculate" prefHeight="46.0" prefWidth="242.0" style="-fx-background-color: #2E8B57;" text="расчет" textFill="WHITE" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2">
                                     <GridPane.margin>
                                         <Insets bottom="10.0" left="20.0" right="50.0" top="10.0" />
                                     </GridPane.margin>
@@ -178,19 +178,6 @@
                                         <Font size="22.0" />
                                     </font>
                                 </Button>
-                                <Label fx:id="label" disable="true" prefHeight="70.0" prefWidth="171.0" text="размер трубки" visible="false" GridPane.rowIndex="8">
-                                    <GridPane.margin>
-                                        <Insets left="20.0" />
-                                    </GridPane.margin>
-                                    <font>
-                                        <Font name="Gabriola" size="27.0" />
-                                    </font>
-                                </Label>
-                                <TextField fx:id="areaPack" disable="true" prefHeight="53.0" prefWidth="55.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                                    <GridPane.margin>
-                                        <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
-                                    </GridPane.margin>
-                                </TextField>
                                 <Label prefHeight="53.0" prefWidth="158.0" text="Результат :" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="6">
                                     <GridPane.margin>
                                         <Insets left="20.0" right="20.0" />
@@ -231,17 +218,12 @@
                               <Font name="Gabriola" size="40.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="211.0" layoutY="128.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <TextField fx:id="heightMeters" layoutX="211.0" layoutY="128.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField layoutX="201.0" layoutY="226.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                           <GridPane.margin>
-                              <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
-                           </GridPane.margin>
-                        </TextField>
-                        <TextField fx:id="areaPack1" disable="true" layoutX="211.0" layoutY="395.0" prefHeight="53.0" prefWidth="55.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                        <TextField fx:id="heightCentimeters" layoutX="201.0" layoutY="226.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
                            </GridPane.margin>
@@ -270,7 +252,7 @@
                               <Font name="Gabriola" size="22.0" />
                            </font>
                         </Label>
-                        <Label layoutX="201.0" layoutY="405.0" prefHeight="51.0" prefWidth="125.0" text="трубки, см" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                        <Label layoutX="201.0" layoutY="405.0" prefHeight="105.0" prefWidth="106.0" text="трубки, см" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
                            <GridPane.margin>
                               <Insets top="20.0" />
                            </GridPane.margin>
@@ -278,6 +260,45 @@
                               <Font name="Gabriola" size="22.0" />
                            </font>
                         </Label>
+                        <Label fx:id="tubeLengthLabel" prefHeight="110.0" prefWidth="55.0" text="длина" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="17.0" right="40.0" top="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="tubeWidthLabel" layoutX="201.0" layoutY="456.0" prefHeight="33.0" prefWidth="88.0" text="ширина" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tubeLength" layoutX="211.0" layoutY="128.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="tubeWidth" layoutX="201.0" layoutY="438.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="40.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label fx:id="tubeSizeLabel" prefHeight="33.0" prefWidth="171.0" text="размеры трубки, см" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="20.0" top="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="Gabriola" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="resultField" layoutX="316.0" layoutY="448.0" prefHeight="68.0" prefWidth="105.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="100.0" top="10.0" />
+                           </GridPane.margin>
+                        </TextField>
                             </children>
                         </GridPane>
                     </buttons>

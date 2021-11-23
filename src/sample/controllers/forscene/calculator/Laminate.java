@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import sample.controllers.Paths;
 
 public class Laminate extends Calculations {
+
     static private TextField[] laminateFieldsInMeters;
     static private TextField[] laminateFieldsInBoxes;
     static private TextField[] fieldsForTypeCheck;
@@ -126,7 +127,7 @@ public class Laminate extends Calculations {
             if(checkFields(laminateFieldsInMeters)){
                 length = asOneNumber(lengthMeters, lengthCentimeters);
                 width = asOneNumber(widthMeters, widthCentimeters);
-                resultMessage.setText(countLaminateInMeters(length,width));
+                resultMessage.setText(countInMeters(length,width));
             }
             else
                 resultMessage.setText(ERROR_MESSAGE);
@@ -137,7 +138,7 @@ public class Laminate extends Calculations {
                 length = asOneNumber(lengthMeters, lengthCentimeters);
                 width = asOneNumber(widthMeters, widthCentimeters);
                 boxArea = asOneNumber(areaPackMeters, areaPackCentimeters);
-                resultMessage.setText(countLaminateInBoxes(length,width, boxArea));
+                resultMessage.setText(countInPacks(length,width, boxArea));
             }
             else
                 resultMessage.setText(ERROR_MESSAGE);
