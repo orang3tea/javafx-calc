@@ -126,7 +126,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button id="aboutProgrammButton" fx:id="puttyButton" alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#toScenePutty" prefHeight="450.0" prefWidth="0.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-border-radius: 10; -fx-background-radius: 10;" text="расчет шпатлевки" textFill="WHITE">
+                        <Button id="aboutProgrammButton" fx:id="puttyButton" alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#toScenePlaster" prefHeight="450.0" prefWidth="0.0" style="-fx-background-color: #2F4F4F; -fx-border-color: #203D3F; -fx-border-radius: 10; -fx-background-radius: 10;" text="расчет шпатлевки" textFill="WHITE">
                             <font>
                                 <Font name="Gabriola" size="40.0" />
                             </font>

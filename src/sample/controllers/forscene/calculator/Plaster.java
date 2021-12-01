@@ -16,7 +16,7 @@ import sample.controllers.Paths;
 public class Plaster extends Calculations {
     @FXML
     private static final String[] variantsFofChoiceBox = {"цем-я штукатурка","гипс-я штукатурка",
-            "шпатлевка старт", "шпатлевка финиш"};
+            "шпатлевка"};
 
     static private TextField[] allTextFields;
 
@@ -24,10 +24,12 @@ public class Plaster extends Calculations {
     private ChoiceBox<String> materials;
 
     @FXML
-    private Label resultLabelBottom;
+    private TextField packMass;
+
+
 
     @FXML
-    private Label resultLabelTop;
+    private Label resultLabel;
 
     @FXML
     private ResourceBundle resources;
@@ -57,9 +59,6 @@ public class Plaster extends Calculations {
     private TextField lengthMeters;
 
     @FXML
-    private Label resultLabel;
-
-    @FXML
     private TextField widthCentimeters;
 
     @FXML
@@ -76,7 +75,7 @@ public class Plaster extends Calculations {
         assert goBack != null : "fx:id=\"goBack\" was not injected: check your FXML file 'plaster.fxml'.";
 
         allTextFields = new TextField[] {lengthMeters, lengthCentimeters, widthMeters, widthCentimeters,
-                heightMeters, heightCentimeters, coatingThickness};
+                heightMeters, heightCentimeters, coatingThickness, packMass};
         typeCheck(allTextFields);
 
         materials.getItems().addAll(variantsFofChoiceBox);
@@ -99,12 +98,13 @@ public class Plaster extends Calculations {
             depth = coatingThickness.getText();
             materialsVolume = countMaterialsVolume(wallsArea(length, width, height), depth);
 
-            resultLabelTop.setText("объем готовой смеси, м.куб    " + materialsVolume);
-            resultLabelBottom.setText("вес готовой смеси, кг    " + countMaterialWeight(materialsVolume, materials.getValue()));
+
+            resultLabel.setText("необходимо упаковок  " + countMaterialPack(materialsVolume, materials.getValue(),
+                    packMass.getText()));
 
         }
         else
-            resultLabelTop.setText(ERROR_MESSAGE);
+            resultLabel.setText(ERROR_MESSAGE);
 
 
     }

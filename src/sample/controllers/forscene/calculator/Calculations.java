@@ -12,10 +12,11 @@ public class Calculations extends ControllerAction {
     private static final BigDecimal CEN_SQ_TO_MET_CUB = BigDecimal.valueOf(1000);
     public static final String ERROR_MESSAGE = "Не все поля заполнены!";
 
-    private static final BigDecimal CONCRETE_PLASTER_DENSITY = BigDecimal.valueOf(1800);
-    private static final BigDecimal GYPSUM_PLASTER_DENSITY = BigDecimal.valueOf(900);
-    private static final BigDecimal START_PUTTY_DENSITY  = BigDecimal.valueOf(1200);
-    private static final BigDecimal FINISH_PUTTY_DENSITY = BigDecimal.valueOf(800);
+
+
+    private static final BigDecimal PUTTU_CONSUMPTION = new BigDecimal("1000.0");
+    private static final BigDecimal CONCRETE_PLASTER_CONSUMPTION = new BigDecimal("1700");
+    private static final BigDecimal GYPSUM_PLASTER_CONSUMPTION = new BigDecimal("1100");
 
 
 
@@ -57,20 +58,21 @@ public class Calculations extends ControllerAction {
     protected String countMaterialsVolume(String wallsArea, String depth) {
         BigDecimal bDWallsArea = new BigDecimal(wallsArea);
         BigDecimal bDDepth = new BigDecimal(depth);
-        return bDWallsArea.multiply(bDDepth).divide(CEN_SQ_TO_MET_CUB, 1, RoundingMode.CEILING).toString();
+        return bDWallsArea.multiply(bDDepth).divide(CEN_SQ_TO_MET_CUB, 2, RoundingMode.CEILING).toString();
     }
 
-    protected String countMaterialWeight(String volume, String material) {
-        BigDecimal materialDensity = null;
+    protected String countMaterialPack(String volume, String material, String packMass) {
+        BigDecimal materialConsumption = null;
         BigDecimal materialVolume = new BigDecimal(volume);
+        BigDecimal bDPackMass = new BigDecimal(packMass);
         switch (material) {
-            case "цем-я штукатурка" -> materialDensity = CONCRETE_PLASTER_DENSITY;
-            case "гипс-я штукатурка" -> materialDensity = GYPSUM_PLASTER_DENSITY;
-            case "шпатлевка старт" -> materialDensity = START_PUTTY_DENSITY;
-            case "шпатлевка финиш" -> materialDensity = FINISH_PUTTY_DENSITY;
+            case "цем-я штукатурка" -> materialConsumption = CONCRETE_PLASTER_CONSUMPTION;
+            case "гипс-я штукатурка" -> materialConsumption = GYPSUM_PLASTER_CONSUMPTION;
+            case "шпатлевка" -> materialConsumption = PUTTU_CONSUMPTION;
+
         }
-        assert materialDensity != null;
-        return materialDensity.multiply(materialVolume).toString();
+        assert materialConsumption != null;
+        return materialConsumption.multiply(materialVolume).divide(bDPackMass, 0, RoundingMode.CEILING).toString();
     }
 
     protected int countPackArea(int length, int width) {
