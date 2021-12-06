@@ -79,6 +79,7 @@ public class Laminate extends Calculations {
         laminateFieldsInMeters = new TextField[]{widthMeters, widthCentimeters, lengthMeters, lengthCentimeters};
         laminateFieldsInBoxes = new TextField[]{widthMeters, widthCentimeters, lengthMeters, lengthCentimeters,
                                                 areaPackMeters, areaPackCentimeters};
+
        fieldsForTypeCheck = new TextField[]{lengthMeters, lengthCentimeters, widthCentimeters, widthMeters,
                 areaPackMeters, areaPackCentimeters};
 
@@ -127,7 +128,7 @@ public class Laminate extends Calculations {
             if(checkFields(laminateFieldsInMeters)){
                 length = asOneNumber(lengthMeters, lengthCentimeters);
                 width = asOneNumber(widthMeters, widthCentimeters);
-                resultMessage.setText(countInMeters(length,width));
+                resultMessage.setText(countFloorArea(length,width));
             }
             else
                 resultMessage.setText(ERROR_MESSAGE);
